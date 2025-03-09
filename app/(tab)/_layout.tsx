@@ -3,11 +3,10 @@ import React from "react";
 
 const TabRoot = () => {
   return (
-    <Tabs>
-        <Tabs.Screen name="index"/>
-        <Tabs.Screen name="about"/>
-        <Tabs.Screen name="profile"/>
-
+    <Tabs screenOptions={{ headerShown: false }}>
+        <Tabs.Screen name="index" />
+        <Tabs.Screen name="about" />
+        <Tabs.Screen name="profile" />
     </Tabs>
   );
 };

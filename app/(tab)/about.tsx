@@ -1,12 +1,12 @@
-import { View, Text } from 'react-native';
-import React from 'react';
+import { View, Text } from 'react-native'
+import React from 'react'
 
-const About = () => {
+const about = () => {
   return (
     <View>
-      <Text>About</Text>
+      <Text>about</Text>
     </View>
-  );
-};
+  )
+}
 
-export default About;
+export default about
