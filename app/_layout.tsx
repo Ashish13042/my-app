@@ -1,10 +1,19 @@
-import { Redirect, Stack } from "expo-router";
-import React from "react";
+import { Stack, useRouter } from 'expo-router';
+import React, { useEffect } from 'react';
 
-const RootLayout = () => {
-  return <Stack screenOptions={{ headerShown: false }}>
-    <Redirect href="./tab" />
-  </Stack>;
-};
+export default function TabLayout() {
+  const router = useRouter();
 
-export default RootLayout;
+  useEffect(() => {
+    // Redirect to the "tabs" folder when the app opens
+    router.push('/(tab)');
+  }, [router]);
+
+  return (
+    <Stack>
+      <Stack.Screen name="(tab)" options={{ headerShown: false }} />
+      <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
+    </Stack>
+    
+  );
+}
