@@ -1,15 +1,21 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
-import { Link } from 'expo-router';
+import MyButton from '@/components/MyButton';
+import { useRouter } from 'expo-router';
 
-const Home = () => {
+const Index = () => {
+  const router = useRouter();
+
+  const onContinue = () => {
+    router.push('/login');
+
+  }
+
   return (
-    <View>
-      <Text>Home</Text>
-      <Link href={"/(tab)"}>go to tabs</Link>
-      <Link href={"/(drawer)"}>go to drawers</Link>
+    <View style={{flex:1, justifyContent:'center',alignItems:'center'}}>
+      <MyButton title={"Get Started"} onPress={onContinue} />
     </View>
   );
 };
 
-export default Home;
+export default Index;
