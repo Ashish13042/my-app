@@ -1,19 +1,19 @@
 import { View } from 'react-native';
-import React from 'react';
-import MyButton from '@/components/MyButton';
+import React, { useEffect } from 'react';
 import { useRouter } from 'expo-router';
 
 const Index = () => {
   const router = useRouter();
 
-  const onContinue = () => {
-    router.push('/login');
-
-  }
+  useEffect(() => {
+    setTimeout(() => {
+      router.push('/login'); // Delaying navigation slightly
+    }, 100); 
+  }, [router]);
 
   return (
-    <View style={{flex:1, justifyContent:'center',alignItems:'center'}}>
-      <MyButton title={"Get Started"} onPress={onContinue} />
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      {/* Optionally show a loading screen */}
     </View>
   );
 };
